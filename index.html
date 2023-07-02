@@ -4,32 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>COVID-Flight-Tracker</title>
   </head>
+  
   <body>
-    <date-picker format="MMMM DD, YYYY"></date-picker>
-    <!-- we can do this format="MMMM DD (DDD), YYYY" date="03-07-2023"position="bottom"visible > if we change possition (left ,right ,top) -->
-    <a
-      style="
-        position: fixed;
-        bottom: 25px;
-        left: 25px;
-        color: #222;
-        text-shadow: 0 0 1px #222;
-      "
-      target="_blank"
-    ></a>
-    <button
-      class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-    >
-      Button
-    </button>
-    <button
-      class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-    >
-      Button
-    </button>
+    <header>
+      <h1>COVID-19 Flight Tracker</h1>
+    </header>
+
+    <main>
+      <!-- Fligh section -->
+      <section>
+        <!-- Calendar -->
+        <date-picker format="MMMM DD, YYYY"></date-picker>
+        <!-- We can do this format="MMMM DD (DDD), YYYY" date="03-07-2023"position="bottom"visible > if we change possition (left ,right ,top) -->
+        <a
+          style="
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            color: #222;
+            text-shadow: 0 0 1px #222;
+          "
+          target="_blank">
+        </a>
+        <!-- Button 1 -->
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Button</button>
+        <!-- Button 2 -->
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Button</button>
+      </section>
+
+      <!-- Covid section -->
+      <section class="covid-container">
+        <div class="search-wrapper">
+            <input type="text" id="country-input" class="covid-input" placeholder="Enter a country for COVID status">
+            <button id="search-button" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Button</button>
+        </div>
+        <div id="result"></div>
+      </section>
+    </main>  
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/calendar.js"></script>
