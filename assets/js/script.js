@@ -59,23 +59,7 @@ fetch(airportsURL)
     console.error(error);
   });
 
-// var searchButton = document.getElementById("search-button");
-// var countryInput = document.getElementById("country-input");
-
-// searchButton.addEventListener("click", () => {
-//     var countryName = countryInput.value
-
-//     var requestUrl = 'https://disease.sh/v3/covid-19/countries/' + countryName + '?strict=true';
-
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data)
-
-// })
-// })
+// Covid section
 
 var searchButton = document.getElementById("search-button");
 var countryInput = document.getElementById("country-input");
