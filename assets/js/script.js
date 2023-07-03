@@ -34,7 +34,6 @@ fetch(cities)
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     var cityCode = `City code: ` + data[0].codeIataCity;
     console.log(cityCode);
     var nameCity = `City name: ` + data[0].timezone;
@@ -43,43 +42,40 @@ fetch(cities)
     console.log(country);
 
     var cityCode = data[0].codeIataCity;
-
-    getFlightInfo(cityCode);
   });
 
-function getFlightInfo(cityCode) {
-  var date = "2023-09-05";
+var date = "2023-09-05";
 
-  var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
-  fetch(flightInfo)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      var airlineName = `Airline company: ` + data[0].codeshared.airline.name;
-      console.log(airlineName);
-      var flightNumber = `Flight number: ` + data[0].flight.iataNumber;
+var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
+
+fetch(flightInfo)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    for (i = 0; i < 100; i++) {
+      var flightNumber = `Flight number: ` + data[i].flight.iataNumber;
       console.log(flightNumber);
-      var departureTime = `Departure time: ` + data[0].departure.scheduledTime;
+      var departureTime = `Departure time: ` + data[i].departure.scheduledTime;
       console.log(departureTime);
       var gateTerminal =
         `Leaving from gate: ` +
-        data[0].departure.gate +
+        data[i].departure.gate +
         "  " +
         `Terminal: ` +
-        data[0].departure.terminal;
+        data[i].departure.terminal;
       console.log(gateTerminal);
-      var arrival = "Travelling to: " + data[0].arrival.iataCode;
+      var arrival = "Travelling to: " + data[i].arrival.iataCode;
       console.log(arrival);
-      var arrivalCode = data[0].arrival.iataCode;
+      var arrivalCode = data[i].arrival.iataCode;
       var arrivalInfo = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${arrivalCode}`;
+
       fetch(arrivalInfo)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
           var arrivalCodeCity = `Arrival City code: ` + data[0].codeIataCity;
           console.log(arrivalCodeCity);
           var arrivalNameCity = `Arrival City name: ` + data[0].timezone;
@@ -87,5 +83,5 @@ function getFlightInfo(cityCode) {
           var arrivalCountry = `Country:  ` + data[0].nameCountry;
           console.log(arrivalCountry);
         });
-    });
-}
+    }
+  });
