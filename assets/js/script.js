@@ -1,63 +1,11 @@
 // Input containers
-
+var dateInput = document.getElementById("date-input");
+var cityInput = document.getElementById("city-input");
 // Buttons
 
 // Event handlers
 
-// Location
-var airportLocation = "syd"; // Need to assign to an input
-
-// Airlabs API Key
-var airLabsAPIKey = `a0820d14-87e3-4ba3-b66d-96618ceefedb`;
-
-// Airlabs location URL
-var airportsURL = `https://airlabs.co/api/v9/airports?iata_code=${airportLocation}&api_key=${airLabsAPIKey}`;
-
-// Airport location API
-fetch(airportsURL)
-  .then((response) => response.json())
-  .then((data) => {
-    // Country data
-    var country = `Departing Country: ` + data.response[0].country_code;
-
-    // Airport Name
-    var airportName = `Departing Airport: ` + data.response[0].name;
-    console.log(country);
-    console.log(airportName);
-
-    var iataCode = data.response[0].iata_code;
-    console.log(iataCode);
-    var date = "2023-07-01"; // Need to assign to calender input
-
-    // Flight info URL
-    var flightStatsURL = `https://airlabs.co/api/v9/routes?dep_iata=${iataCode}&date=${date}&api_key=${airLabsAPIKey}`;
-
-    // Flight info API
-    fetch(flightStatsURL)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        var arrivalIATA = data.response[0].arr_iata;
-
-        // Airport location URL but with arrival queries from flight info
-        var arrivalAirportURL = `https://airlabs.co/api/v9/airports?iata_code=${arrivalIATA}&api_key=${airLabsAPIKey}`;
-
-        // Airport location API again but with the ARRIVAL info from the flight info api.
-        fetch(arrivalAirportURL)
-          .then((response) => response.json())
-          .then((data) => {
-            var arrivalCountry =
-              "Arrival Country: " + data.response[0].country_code;
-            var arrivalAirport = "Arrival Airport: " + data.response[0].name;
-
-            console.log(arrivalCountry);
-            console.log(arrivalAirport);
-          });
-      });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+var date = dateInput.value; // Need to assign to calender input
 
 // Covid section
 
@@ -78,3 +26,66 @@ searchButton.addEventListener("click", () => {
       console.log(data);
     });
 });
+const flightAPI = "59de1f-88c9f9";
+var city = "syd";
+var cities = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${city}`;
+fetch(cities)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    var cityCode = `City code: ` + data[0].codeIataCity;
+    console.log(cityCode);
+    var nameCity = `City name: ` + data[0].timezone;
+    console.log(nameCity);
+    var country = `Country:  ` + data[0].nameCountry;
+    console.log(country);
+
+    var cityCode = data[0].codeIataCity;
+
+    getFlightInfo(cityCode);
+  });
+
+function getFlightInfo(cityCode) {
+  var date = "2023-09-05";
+
+  var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
+  fetch(flightInfo)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var airlineName = `Airline company: ` + data[0].codeshared.airline.name;
+      console.log(airlineName);
+      var flightNumber = `Flight number: ` + data[0].flight.iataNumber;
+      console.log(flightNumber);
+      var departureTime = `Departure time: ` + data[0].departure.scheduledTime;
+      console.log(departureTime);
+      var gateTerminal =
+        `Leaving from gate: ` +
+        data[0].departure.gate +
+        "  " +
+        `Terminal: ` +
+        data[0].departure.terminal;
+      console.log(gateTerminal);
+      var arrival = "Travelling to: " + data[0].arrival.iataCode;
+      console.log(arrival);
+      var arrivalCode = data[0].arrival.iataCode;
+      var arrivalInfo = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${arrivalCode}`;
+      fetch(arrivalInfo)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          var arrivalCodeCity = `Arrival City code: ` + data[0].codeIataCity;
+          console.log(arrivalCodeCity);
+          var arrivalNameCity = `Arrival City name: ` + data[0].timezone;
+          console.log(arrivalNameCity);
+          var arrivalCountry = `Country:  ` + data[0].nameCountry;
+          console.log(arrivalCountry);
+        });
+    });
+}
