@@ -24,9 +24,25 @@ searchButton.addEventListener("click", () => {
       return response.json();
     })
     .then(function (data) {
+    
       console.log(data);
     });
 });
+=======
+      var countryName = `Country: ` + data.country
+      console.log(countryName)
+      var countryContinent = `Continent: ` + data.continent
+      console.log(countryContinent)
+      var countryPopulation = `Population: ` + data.population
+      console.log(countryPopulation)
+      var countryCovidCases = `Cases: ` + data.cases
+      console.log(countryCovidCases)
+      var countryCovidActiveCases = `Active:` + data.active 
+      console.log(countryCovidActiveCases)
+      
+})
+})
+
 const flightAPI = "59de1f-88c9f9";
 var city = "syd";
 var cities = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${city}`;
