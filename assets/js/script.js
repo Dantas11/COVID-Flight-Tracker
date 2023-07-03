@@ -12,20 +12,21 @@ var date = dateInput.value; // Need to assign to calender input
 var searchButton = document.getElementById("search-button");
 var countryInput = document.getElementById("country-input");
 
-searchButton.addEventListener("click", () => {
-  var countryName = countryInput.value;
 
-  var requestUrl =
-    "https://restcountries.com/v3.1/name/" + countryName + "?fullText=true";
+searchButton.addEventListener("click", () => {
+    var countryName = countryInput.value
+
+    var requestUrl = 'https://disease.sh/v3/covid-19/countries/' + countryName + '?strict=true';
 
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-    });
-});
+      console.log(data) 
+      
+})
+})
 const flightAPI = "59de1f-88c9f9";
 var city = "syd";
 var cities = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${city}`;
