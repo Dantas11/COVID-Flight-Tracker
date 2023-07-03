@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link href="assets/css/bulma-calendar.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>COVID-Flight-Tracker</title>
   </head>
@@ -20,19 +25,11 @@
           Departing city: <input id="city-input" />
           <!-- Calendar -->
           Departing date:
-          <date-picker id="date-input" format="YYYY-MM-DD"></date-picker>
-          <!-- We can do this format="MMMM DD (DDD), YYYY" date="03-07-2023"position="bottom"visible > if we change possition (left ,right ,top) -->
-          <a
-            style="
-              position: fixed;
-              bottom: 25px;
-              left: 25px;
-              color: #222;
-              text-shadow: 0 0 1px #222;
-            "
-            target="_blank"
-          >
-          </a>
+
+          <!-- bulma date picker -->
+          <section class="is-three-quarters">
+            <input class="input bulmaCalendar w-50" type="date" />
+          </section>
 
           <button
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
@@ -71,7 +68,10 @@
         </ul>
       </div>
       <script src="assets/js/script.js"></script>
-      <script src="assets/js/calendar.js"></script>
+
+      <script src="assets/css/doc.js"></script>
+      <script src="assets/css/bulma-calendar.min.js"></script>
+      <script src="assets/css/main.js"></script>
     </div>
   </body>
 </html>
