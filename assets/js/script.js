@@ -7,6 +7,7 @@ var covidInfo = document.getElementById("covid-info");
 // Buttons
 var flightSearchButton = document.getElementById("flight-search-button");
 var searchButton = document.getElementById("covid-search-button");
+var resetFlights = document.getElementById("reset-flights");
 
 // Covid section
 
@@ -136,3 +137,7 @@ function searchFlights() {
 
 // Click function to search for flights.
 flightSearchButton.addEventListener("click", searchFlights);
+
+resetFlights.addEventListener("click", () => {
+  window.location.reload();
+});
