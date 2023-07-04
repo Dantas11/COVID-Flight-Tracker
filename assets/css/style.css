@@ -5,6 +5,7 @@
 }
 
 main {
+  /* background-image: url("/assets/images/ross-parmly-rf6ywHVkrlY-unsplash.jpg"); */
   background-color: rgb(250, 248, 248);
   padding: 50px;
   width: 30%;
@@ -35,6 +36,8 @@ header h1 {
 }
 
 .container {
+  background-image: url("../images/ross-parmly-rf6ywHVkrlY-unsplash.jpg");
+  background-repeat: no-repeat;
   display: flex;
   margin: 100px;
   justify-content: center;
