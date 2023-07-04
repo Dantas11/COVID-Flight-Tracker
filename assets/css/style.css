@@ -5,6 +5,7 @@
 }
 
 main {
+  background-color: rgb(250, 248, 248);
   padding: 50px;
   width: 30%;
   border-radius: 5px;
@@ -28,6 +29,11 @@ header h1 {
   font-size: 50px;
 }
 
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   display: flex;
   margin: 100px;
@@ -42,6 +48,7 @@ header h1 {
 }
 
 .list-container {
+  background-color: rgb(250, 248, 248);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,6 +80,7 @@ header h1 {
 }
 
 #flight-list-container li {
+  background-color: white;
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -80,7 +88,7 @@ header h1 {
 }
 
 #flight-list-container li:hover {
-  background: linear-gradient(to right, #6190e8, #a7bfe8);
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
   color: white;
 }
 
