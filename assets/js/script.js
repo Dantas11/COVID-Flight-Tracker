@@ -2,16 +2,17 @@
 var dateInput = document.getElementById("date-input");
 var cityInput = document.querySelector("#city-input");
 var flightList = document.getElementById("list-flights");
+var covidInfo = document.getElementById("covid-info");
+
 // Buttons
 var flightSearchButton = document.getElementById("flight-search-button");
 var searchButton = document.getElementById("covid-search-button");
-// Event handlers
 
 // Covid section
 
 var countryInput = document.getElementById("country-input");
 
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", function () {
   var countryName = countryInput.value;
 
   var requestUrl =
@@ -23,20 +24,38 @@ searchButton.addEventListener("click", () => {
     })
     .then(function (data) {
       console.log(data);
-      var countryName = `Country: ` + data.country;
-      console.log(countryName);
-      var countryContinent = `Continent: ` + data.continent;
-      console.log(countryContinent);
-      var countryPopulation = `Population: ` + data.population;
-      console.log(countryPopulation);
-      var countryCovidCases = `Cases: ` + data.cases;
-      console.log(countryCovidCases);
-      var countryCovidActiveCases = `Active:` + data.active;
-      console.log(countryCovidActiveCases);
+      var countryName = "Country: " + data.country;
+      var countryContinent = "Continent: " + data.continent;
+      var countryPopulation = "Population: " + data.population;
+      var countryCovidCases = "Cases: " + data.cases;
+      var countryCovidActiveCases = "Active: " + data.active;
+
+      // List creation for covid info.
+      var covidInfoList = document.createElement("li");
+
+      covidInfo.innerHTML = "";
+      covidInfoList.innerHTML =
+        countryName +
+        "<br>" +
+        countryContinent +
+        "<br>" +
+        countryPopulation +
+        "<br>" +
+        countryCovidCases +
+        "<br>" +
+        countryCovidActiveCases;
+
+      covidInfoList.classList.add("covid-info-item");
+      covidInfo.appendChild(covidInfoList);
     });
 });
+
+// Flight API function
 function searchFlights() {
+  // API KEY
   const flightAPI = "59de1f-88c9f9";
+
+  // City IATA API
   var city = cityInput.value;
   console.log(city);
   var cities = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${city}`;
@@ -54,9 +73,11 @@ function searchFlights() {
 
       var cityCode = data[0].codeIataCity;
     });
-
+  // Did this to reformat the value coming from calender input
   var date = dateInput.date.Date.toISOString().split("T")[0];
-  console.log(date); // Need to assign to calender input
+  console.log(date);
+
+  // Flight info API
   var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
 
   fetch(flightInfo)
@@ -76,11 +97,16 @@ function searchFlights() {
           `Terminal: ` +
           flight.departure.terminal;
 
+        // List creation for flight info.
+
         var listOfFlights = document.createElement("li");
+
         listOfFlights.innerHTML =
           flightNumber + "<br>" + departureTime + "<br>" + gateTerminal;
 
         flightList.appendChild(listOfFlights);
+
+        // City code API used again for arrival info.
 
         var arrivalCode = flight.arrival.iataCode;
         var arrivalInfo = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${arrivalCode}`;
@@ -108,4 +134,5 @@ function searchFlights() {
     });
 }
 
+// Click function to search for flights.
 flightSearchButton.addEventListener("click", searchFlights);
