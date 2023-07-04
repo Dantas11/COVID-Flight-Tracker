@@ -72,6 +72,7 @@ header h1 {
 #flight-list-container {
   height: 400px;
   overflow-y: auto;
+  margin-bottom: 10px;
 }
 
 #flight-list-container::-webkit-scrollbar {
@@ -107,4 +108,11 @@ header h1 {
   padding: 5px;
   width: 100%;
   border: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.date-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
