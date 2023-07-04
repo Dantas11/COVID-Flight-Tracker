@@ -55,7 +55,6 @@
           <!-- Calendar -->
           Departing date:
           <date-picker id="date-input" format="YYYY-MM-DD"></date-picker>
-          <!-- We can do this format="MMMM DD (DDD), YYYY" date="03-07-2023"position="bottom"visible > if we change possition (left ,right ,top) -->
           <a
             style="
               position: fixed;
@@ -81,6 +80,10 @@
           <div class="search-wrapper">
             Enter a country for COVID info:
             <input type="text" id="country-input" class="covid-input" />
+            <!-- Covid list-->
+            <div id="covid-info-container">
+              <ul id="covid-info"></ul>
+            </div>
             <button
               id="covid-search-button"
               class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"

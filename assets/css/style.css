@@ -5,8 +5,11 @@
 }
 
 main {
-  padding: 100px;
-  width: 50%;
+  padding: 50px;
+  width: 30%;
+  border-radius: 5px;
+  margin: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 button {
@@ -28,21 +31,35 @@ header h1 {
 .container {
   display: flex;
   margin: 100px;
+  justify-content: center;
 }
 
 .departure-choice {
   display: flex;
+
   flex-direction: column;
   padding-bottom: 10px;
-  width: 250px;
 }
 
 .list-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  padding: 100px;
+  width: 30%;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  border-radius: 5px;
+  margin: 50px;
+}
+
+#covid-info-container li {
+  display: flex;
+  color: white;
+  background: linear-gradient(to right, #ed213a, #93291e);
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0px;
+  padding: 10px;
 }
 
 #flight-list-container {
@@ -55,14 +72,14 @@ header h1 {
   background: transparent;
 }
 
-li {
+#flight-list-container li {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
 }
 
-li:hover {
+#flight-list-container li:hover {
   background: linear-gradient(to right, #6190e8, #a7bfe8);
   color: white;
 }
@@ -76,8 +93,10 @@ li:hover {
 /* Covid section */
 .covid-container {
   width: 250px;
+  display: flex;
 }
 .covid-input {
+  padding: 5px;
   width: 100%;
   border: 10px;
 }
