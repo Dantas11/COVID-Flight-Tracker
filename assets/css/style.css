@@ -27,6 +27,7 @@ header h1 {
 
 .container {
   display: flex;
+  margin: 100px;
 }
 
 .departure-choice {
@@ -42,6 +43,28 @@ header h1 {
   align-items: center;
   width: 50%;
   padding: 100px;
+}
+
+#flight-list-container {
+  height: 400px;
+  overflow-y: auto;
+}
+
+#flight-list-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+li {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+li:hover {
+  background: linear-gradient(to right, #6190e8, #a7bfe8);
+  color: white;
 }
 
 *,

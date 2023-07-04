@@ -182,7 +182,7 @@ class Calendar {
 }
 
 class DatePicker extends HTMLElement {
-  format = "MMM DD, YYYY";
+  format = "YYYY-MM-DD";
   position = "bottom";
   visible = false;
   date = null;
@@ -589,6 +589,3 @@ class DatePicker extends HTMLElement {
 }
 
 customElements.define("date-picker", DatePicker);
-
-
-
