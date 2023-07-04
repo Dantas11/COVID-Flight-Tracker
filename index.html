@@ -12,12 +12,46 @@
     <header>
       <h1>COVID-19 Flight Tracker</h1>
     </header>
+
     <div class="container">
       <main>
         <!-- Fligh section -->
 
         <div class="departure-choice">
-          Departing city: <input id="city-input" />
+          Departing:
+          <select id="city-input" name="city" class="form-select">
+            <option value="">Select City</option>
+            <option value="AUH">Abu Dhabi</option>
+            <option value="AKL">Auckland</option>
+            <option value="BKK">Bangkok</option>
+            <option value="PEK">Beijing</option>
+            <option value="BNE">Brisbane</option>
+            <option value="DXB">Dubai</option>
+            <option value="HKG">Hong Kong</option>
+            <option value="JNB">JohannesBurg</option>
+            <option value="KUL">Kuala Lumpur</option>
+            <option value="LAS">Las Vegas</option>
+            <option value="LAX">Los Angeles</option>
+            <option value="MLB">Melbourne</option>
+            <option value="MIA">Miami</option>
+            <option value="JFK">New York</option>
+            <option value="MCO">Orlando</option>
+            <option value="PER">Perth</option>
+            <option value="SFO">San Francisco</option>
+            <option value="PVG">Shanghai</option>
+            <option value="SIN">Singapore</option>
+            <option value="SYD">Sydney</option>
+            <option value="TPA">Tampa</option>
+            <option value="YYZ">Toronto</option>
+            <option value="IAD">Washington</option>
+            <option value="LHR">London</option>
+            <option value="MAN">Manchester</option>
+            <option value="NCL">Newcastle</option>
+            <option value="LPL">Liverpool</option>
+            <option value="EDI">Edinburgh</option>
+            <option value="ABZ">Aberdeen</option>
+          </select>
+
           <!-- Calendar -->
           Departing date:
           <date-picker id="date-input" format="YYYY-MM-DD"></date-picker>
@@ -35,6 +69,7 @@
           </a>
 
           <button
+            id="flight-search-button"
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
           >
             Search
@@ -47,7 +82,7 @@
             Enter a country for COVID info:
             <input type="text" id="country-input" class="covid-input" />
             <button
-              id="search-button"
+              id="covid-search-button"
               class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
             >
               Search
@@ -60,7 +95,9 @@
       <!--- Flight list --->
       <div class="list-container">
         <h2>Available flights:</h2>
-        <ul id="list-flights"></ul>
+        <div id="flight-list-container">
+          <ul id="list-flights"></ul>
+        </div>
       </div>
       <script src="assets/js/script.js"></script>
       <script src="assets/js/calendar.js"></script>
