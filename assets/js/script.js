@@ -87,7 +87,7 @@ function searchFlights() {
     })
     .then(function (data) {
       console.log(data);
-      var flightData = data.slice(0, 50);
+      var flightData = data.slice(0, 10);
       flightData.forEach(function (flight) {
         var flightNumber = `Flight number: ` + flight.flight.iataNumber;
         var departureTime = `Departure time: ` + flight.departure.scheduledTime;
@@ -100,10 +100,33 @@ function searchFlights() {
 
         // List creation for flight info.
 
+        //Function to obtain information from list item we click on
         var listOfFlights = document.createElement("li");
-
-        listOfFlights.innerHTML =
-          flightNumber + "<br>" + departureTime + "<br>" + gateTerminal;
+        listOfFlights.addEventListener("click", function (){
+        var selectedFlight = event.target;
+        var selectedFlightText = selectedFlight.textContent
+        console.log(selectedFlightText)
+        //Event Listener for Save button click
+        document.getElementById("save-flight-button").addEventListener("click", function() {
+          console.log("Saving"); 
+        
+          //Save selected flight to local storage
+          // var savedFlights = (() => {
+          //   var flightsSaved = localStorage.getItem("specificFlights");
+          //   return flightsSaved === null
+          //   ? []
+          //   : JSON.parse(flightsSaved);
+          // })();
+          // savedFlights.push(selectedFlightText);
+          // localStorage.setItem("specificFlights", JSON.stringify(savedFlights));
+        localStorage.setItem("specificFlights", selectedFlightText)
+        });
+        }) ;
+        
+        
+        
+        listOfFlights.textContent =
+          flightNumber + "\n" + departureTime + "\n" + gateTerminal;
 
         flightList.appendChild(listOfFlights);
 
@@ -123,18 +146,13 @@ function searchFlights() {
             console.log(
               arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
             );
-            listOfFlights.innerHTML +=
-              "<br>" +
-              arrivalCodeCity +
-              "<br>" +
-              arrivalNameCity +
-              "<br>" +
-              arrivalCountry;
           });
       });
     });
 }
 
+
+ 
 // Click function to search for flights.
 flightSearchButton.addEventListener("click", searchFlights);
 
@@ -142,14 +160,6 @@ resetFlights.addEventListener("click", () => {
   window.location.reload();
 });
 
-//Event Listener for Save button click
-$('#save-flight-button').on('click', function () {
-  console.log("Saving");
-  // Get values of specific li when rendered by api
-  //var flightData =
-  //Local Storage for specific flight
-  localStorage.setItem(flightData);
-})
+ 
 
-//Local Storage retrival for area for saved flights
-//$('# .description').val(localStorage.getItem('')) 
+ 
