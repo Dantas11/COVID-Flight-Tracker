@@ -5,7 +5,6 @@
 }
 
 main {
-  /* background-image: url("/assets/images/ross-parmly-rf6ywHVkrlY-unsplash.jpg"); */
   background-color: rgba(244, 233, 205, 0.7);
   padding: 50px;
   height: 520px;
@@ -63,6 +62,7 @@ header {
   text-align: center;
   background-color: blue;
   padding: 30px;
+  width: auto;
 }
 
 header h1 {
@@ -149,7 +149,7 @@ header h1 {
 
 /* Covid section */
 .covid-container {
-  width: 250px;
+  /* width: 250px;  */
   display: flex;
 }
 .covid-input {
@@ -164,3 +164,12 @@ header h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+/* Option of button side by side */
+#container-two-buttons {
+  display: flex;
+}
+
+
+
+
