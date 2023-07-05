@@ -159,7 +159,3 @@ flightSearchButton.addEventListener("click", searchFlights);
 resetFlights.addEventListener("click", () => {
   window.location.reload();
 });
-
- 
-
- 
