@@ -143,13 +143,13 @@ resetFlights.addEventListener("click", () => {
 });
 
 //Event Listener for Save button click
-$('#save-flight-button').on('click', function () {
+$("#save-flight-button").on("click", function () {
   console.log("Saving");
   // Get values of specific li when rendered by api
   //var flightData =
   //Local Storage for specific flight
   localStorage.setItem(flightData);
-})
+});
 
 //Local Storage retrival for area for saved flights
-//$('# .description').val(localStorage.getItem('')) 
+//$('# .description').val(localStorage.getItem(''))
