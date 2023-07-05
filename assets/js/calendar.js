@@ -432,7 +432,7 @@ class DatePicker extends HTMLElement {
           -moz-appearance: none;
           appearance: none;
           background: #eee;
-          color: #333;
+          color: #031926;
           border-radius: 6px;
           font-weight: bold;
           cursor: pointer;
@@ -555,12 +555,12 @@ class DatePicker extends HTMLElement {
         }
         
         .month-day.selected {
-          background: #28a5a7;
+          background: #8d2727;
           color: #ffffff;
         }
         
         .month-day:hover {
-          background: #34bd61;
+          background: #b2b5b7;
         }
       `;
   }
