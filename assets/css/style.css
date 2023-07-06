@@ -1,47 +1,38 @@
 * {
   margin: 0;
   padding: 0;
-  color: black;
+  color: #000;
 }
-
 main {
-  background-color: rgba(244, 233, 205, 0.7);
   padding: 50px;
   height: 520px;
   width: 30%;
   border-radius: 5px;
   margin: 50px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
-
 button {
   width: 100px;
   margin-top: 10px;
   margin-bottom: 10px;
-  /*opacity: 70%;*/
 }
-
 input {
-  /*opacity: 70%;*/
   border-radius: 5px;
 }
-
-#flight-search-button,
 #covid-search-button,
-#save-flight-button,
-#reset-flights {
-  margin: 5px 5px 5px 0px;
+#flight-search-button,
+#reset-flights,
+#save-flight-button {
+  margin: 5px 5px 5px 0;
 }
-
-#flight-search-button:hover,
 #covid-search-button:hover,
-#save-flight-button:hover,
-#reset-flights:hover {
-  color: white;
+#flight-search-button:hover,
+#reset-flights:hover,
+#save-flight-button:hover {
+  color: #fff;
   background-color: #031926;
 }
-
 button,
 input,
 optgroup,
@@ -55,27 +46,22 @@ textarea {
   color: inherit;
   margin: 0;
   padding: 0;
-  /*opacity: 70%;*/
 }
-
 header {
   text-align: center;
   background-color: #0d47a1;
   padding: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   width: auto;
 }
-
 header h1 {
   font-size: 50px;
-  color: white;
+  color: #fff;
 }
-
 .search-wrapper {
   display: flex;
   flex-direction: column;
 }
-
 .container {
   background-image: url("../images/ross-parmly-rf6ywHVkrlY-unsplash.jpg");
   background-repeat: no-repeat;
@@ -84,14 +70,11 @@ header h1 {
   margin: 100px;
   justify-content: center;
 }
-
 .departure-choice {
   display: flex;
-
   flex-direction: column;
   padding-bottom: 10px;
 }
-
 .list-container {
   background-color: rgba(244, 233, 205, 0.7);
   display: flex;
@@ -100,59 +83,47 @@ header h1 {
   width: 30%;
   height: 520px;
   padding: 50px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   border-radius: 5px;
   margin: 50px;
 }
-
 #covid-info-container li {
   display: flex;
-  color: black;
-  /*opacity: 70%;*/
-  /*background: linear-gradient(to right, #ed213a, #93291e);*/
+  color: #000;
   border-radius: 5px;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 10px 0;
   padding: 10px;
 }
-
 #flight-list-container {
   height: 400px;
   overflow-y: auto;
   margin-bottom: 10px;
 }
-
 #flight-list-container::-webkit-scrollbar {
   width: 0;
-  background: transparent;
+  background: 0 0;
 }
-
 #flight-list-container li {
-  background-color: white;
+  background-color: #fff;
   opacity: 70%;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 5px;
   margin: 10px;
   white-space: pre-wrap;
 }
-
 #flight-list-container li:hover {
-  /*background: linear-gradient(to right, #74ebd5, #acb6e5);*/
-  color: white;
+  color: #fff;
   background: #b2b5b7;
   opacity: 70%;
 }
-
 *,
-*::after,
-*::before {
+::after,
+::before {
   box-sizing: border-box;
 }
-
-/* Covid section */
 .covid-container {
-  /* width: 250px;  */
   display: flex;
 }
 .covid-input {
@@ -162,17 +133,10 @@ header h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
 .date-input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-/* Option of button side by side */
 #container-two-buttons {
   display: flex;
 }
-
-
-
-
