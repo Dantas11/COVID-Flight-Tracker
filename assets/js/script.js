@@ -42,7 +42,6 @@ searchButton.addEventListener("click", function () {
     .then(function (data) {
       console.log(data);
       var countryName = "Country: " + data.country;
-      var countryContinent = "Continent: " + data.continent;
       var countryPopulation = "Population: " + data.population;
       var countryCovidCases = "Cases: " + data.cases;
       var countryCovidActiveCases = "Active: " + data.active;
@@ -53,8 +52,6 @@ searchButton.addEventListener("click", function () {
       covidInfo.innerHTML = "";
       covidInfoList.innerHTML =
         countryName +
-        "<br>" +
-        countryContinent +
         "<br>" +
         countryPopulation +
         "<br>" +
@@ -162,19 +159,16 @@ function searchFlights() {
             console.log(
               arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
             );
-         
+
             blockSpinner();
-            listOfFlights.innerHTML +=
-              "<br>" +
-              arrivalCodeCity +
-              "<br>" +
-              arrivalNameCity +
-              "<br>" +
-              arrivalCountry;
 
             listOfFlights.textContent +=
-            "\n" + arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
-         
+              "\n" +
+              arrivalCodeCity +
+              "\n" +
+              arrivalNameCity +
+              "\n" +
+              arrivalCountry;
           });
       });
     });
