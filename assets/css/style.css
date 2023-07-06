@@ -5,179 +5,26 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-
 body {
   background-image: url("../images/ross-parmly-rf6ywHVkrlY-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0px 50px 50px 50px;
-
+  height: 550px;
   background-color: white;
 }
 .container {
   margin: 10px;
 }
-
-
-header {
-  text-align: center;
-  background-color: #0d47a1;
-  padding: 30px;
-  width: auto;
-}
-
-header h1 {
-  font-size: 50px;
-  color: #fff;
-}
-
-.container {
-  background-image: url("../images/ross-parmly-rf6ywHVkrlY-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  margin: 100px;
-  justify-content: center;
-}
-
 .container__departure {
-
-  padding: 50px;
-  height: 520px;
+  padding: 20px 50px 50px 50px;
+  height: 550px;
   width: 30%;
   border-radius: 5px;
   margin: 50px;
   box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
 }
-
-.container__departure__departure-choice {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-}
-
-.date-input {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.covid-container {
-  display: flex;
-}
-
-.covid-input {
-  padding: 5px;
-  width: 100%;
-  border: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.search-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-#covid-info-container li {
-  display: flex;
-  color: #000;
-  border-radius: 5px;
-  margin: 10px 10px 10px 0;
-  padding: 10px;
-}
-
-.list-container {
-  background-color: rgba(244, 233, 205, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  height: 520px;
-  padding: 50px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
-  border-radius: 5px;
-  margin: 50px;
-}
-
-#flight-list-container {
-  height: 400px;
-  overflow-y: auto;
-  margin-bottom: 10px;
-}
-
-#flight-list-container::-webkit-scrollbar {
-  width: 0;
-  background: 0 0;
-}
-
-#flight-list-container li {
-  background-color: #fff;
-  opacity: 70%;
-  padding: 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  margin: 10px;
-  white-space: pre-wrap;
-}
-
-#flight-list-container li:hover {
-  color: #fff;
-  background: #b2b5b7;
-  opacity: 70%;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
-button {
-  width: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-input {
-  border-radius: 5px;
-}
-
-#covid-search-button,
-#flight-search-button,
-#reset-flights,
-#save-flight-button {
-  margin: 5px 5px 5px 0;
-}
-
-#covid-search-button:hover,
-#flight-search-button:hover,
-#reset-flights:hover,
-#save-flight-button:hover {
-  color: #fff;
-  background-color: #031926;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  border-radius: 5px;
-  font-family: inherit;
-  font-size: 100%;
-  font-weight: inherit;
-  line-height: inherit;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-#container-two-buttons {
-  display: flex;
-}
-
 #spinner,
 #spinner2 {
   display: none;
@@ -254,7 +101,6 @@ textarea {
   }
 }
 
-
 button {
   width: 100px;
   margin-top: 10px;
@@ -309,10 +155,10 @@ header h1 {
   margin: 0px 50px 50px 50px;
   justify-content: center;
 }
-.departure-choice {
+.container__departure__departure-choice {
   display: flex;
   flex-direction: column;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 .list-container {
   background-color: rgba(244, 233, 205, 0.7);
@@ -320,8 +166,8 @@ header h1 {
   flex-direction: column;
   align-items: center;
   width: 30%;
-  height: 520px;
-  padding: 50px;
+  height: 550px;
+  padding: 20px 50px 50px 50px;
   box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
     rgba(14, 30, 37, 0.32) 0 2px 16px 0;
   border-radius: 5px;
@@ -382,11 +228,9 @@ header h1 {
 
 @media (max-width: 900px) {
   .container {
-      flex-direction: column;
+    flex-direction: column;
   }
-  header h1 {
-    
-  }
+
   .container__departure {
     width: 60%;
     padding: 0;
@@ -396,10 +240,8 @@ header h1 {
   }
   .departure-choice {
     padding: 10px;
-    
   }
   .covid-container {
     padding: 10px;
   }
 }
-
