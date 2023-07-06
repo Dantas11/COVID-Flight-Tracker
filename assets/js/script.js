@@ -3,22 +3,38 @@ var dateInput = document.getElementById("date-input");
 var cityInput = document.querySelector("#city-input");
 var flightList = document.getElementById("list-flights");
 var covidInfo = document.getElementById("covid-info");
-
+var spinner = document.getElementById("spinner");
+var spinner2 = document.getElementById("spinner2");
+var countryInput = document.getElementById("country-input");
 // Buttons
 var flightSearchButton = document.getElementById("flight-search-button");
 var searchButton = document.getElementById("covid-search-button");
 var resetFlights = document.getElementById("reset-flights");
 
-// Covid section
+// Spinner
+function showSpinner() {
+  spinner.style.display = "block";
+}
 
-var countryInput = document.getElementById("country-input");
+function blockSpinner() {
+  spinner.style.display = "none";
+}
+
+function showSpinner2() {
+  spinner2.style.display = "block";
+}
+
+function blockSpinner2() {
+  spinner2.style.display = "none";
+}
+
+// Covid section
 
 searchButton.addEventListener("click", function () {
   var countryName = countryInput.value;
-
   var requestUrl =
     "https://disease.sh/v3/covid-19/countries/" + countryName + "?strict=true";
-
+  showSpinner2();
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -33,7 +49,7 @@ searchButton.addEventListener("click", function () {
 
       // List creation for covid info.
       var covidInfoList = document.createElement("li");
-
+      blockSpinner2();
       covidInfo.innerHTML = "";
       covidInfoList.innerHTML =
         countryName +
@@ -55,7 +71,7 @@ searchButton.addEventListener("click", function () {
 function searchFlights() {
   // API KEY
   const flightAPI = "59de1f-88c9f9";
-
+  showSpinner();
   // City IATA API
   var city = cityInput.value;
   console.log(city);
@@ -146,8 +162,19 @@ function searchFlights() {
             console.log(
               arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
             );
+         
+            blockSpinner();
+            listOfFlights.innerHTML +=
+              "<br>" +
+              arrivalCodeCity +
+              "<br>" +
+              arrivalNameCity +
+              "<br>" +
+              arrivalCountry;
+
             listOfFlights.textContent +=
             "\n" + arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
+         
           });
       });
     });
