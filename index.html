@@ -13,11 +13,11 @@
       <h1>COVID-19 Flight Tracker</h1>
     </header>
 
-    <div class="container">
-      <main>
+    <main class="container">
+      <div class="container__departure">
+        
         <!-- Fligh section -->
-
-        <div class="departure-choice">
+        <div class="container__departure__departure-choice">
           Departing:
           <select id="city-input" name="city" class="form-select">
             <option value="">Select City</option>
@@ -95,7 +95,7 @@
           </div>
           <div id="result"></div>
         </section>
-      </main>
+      </div>
 
       <!--- Flight list --->
       <div class="list-container">
@@ -125,6 +125,6 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script src="assets/js/script.js"></script>
       <script src="assets/js/calendar.js"></script>
-    </div>
+    </main>
   </body>
 </html>
