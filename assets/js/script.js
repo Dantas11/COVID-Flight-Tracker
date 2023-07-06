@@ -146,13 +146,8 @@ function searchFlights() {
             console.log(
               arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
             );
-            listOfFlights.innerHTML +=
-              "<br>" +
-              arrivalCodeCity +
-              "<br>" +
-              arrivalNameCity +
-              "<br>" +
-              arrivalCountry;
+            listOfFlights.textContent +=
+            "\n" + arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
           });
       });
     });
