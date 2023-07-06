@@ -162,6 +162,7 @@ function searchFlights() {
             console.log(
               arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
             );
+         
             blockSpinner();
             listOfFlights.innerHTML +=
               "<br>" +
@@ -170,6 +171,10 @@ function searchFlights() {
               arrivalNameCity +
               "<br>" +
               arrivalCountry;
+
+            listOfFlights.textContent +=
+            "\n" + arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
+         
           });
       });
     });
