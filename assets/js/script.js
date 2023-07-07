@@ -6,6 +6,8 @@ var covidInfo = document.getElementById("covid-info");
 var spinner = document.getElementById("spinner");
 var spinner2 = document.getElementById("spinner2");
 var countryInput = document.getElementById("country-input");
+var selectedFlightsArray = JSON.parse(localStorage.getItem("specificFlights")) || [];
+
 // Buttons
 var flightSearchButton = document.getElementById("flight-search-button");
 var searchButton = document.getElementById("covid-search-button");
@@ -93,7 +95,7 @@ function searchFlights() {
 
   // Flight info API
   var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
-
+  
   fetch(flightInfo)
     .then(function (response) {
       return response.json();
@@ -111,42 +113,12 @@ function searchFlights() {
           `Terminal: ` +
           flight.departure.terminal;
 
-        // List creation for flight info.
-
-        //Function to obtain information from list item we click on
-        var listOfFlights = document.createElement("li");
-        listOfFlights.addEventListener("click", function () {
-          var selectedFlight = event.target;
-          var selectedFlightText = selectedFlight.textContent;
-          console.log(selectedFlightText);
-          //Event Listener for Save button click
-          document
-            .getElementById("save-flight-button")
-            .addEventListener("click", function () {
-              console.log("Saving");
-
-              //Save selected flight to local storage
-              // var savedFlights = (() => {
-              //   var flightsSaved = localStorage.getItem("specificFlights");
-              //   return flightsSaved === null
-              //   ? []
-              //   : JSON.parse(flightsSaved);
-              // })();
-              // savedFlights.push(selectedFlightText);
-              // localStorage.setItem("specificFlights", JSON.stringify(savedFlights));
-              localStorage.setItem("specificFlights", selectedFlightText);
-            });
-        });
-
-        listOfFlights.textContent =
-          flightNumber + "\n" + departureTime + "\n" + gateTerminal;
-
-        flightList.appendChild(listOfFlights);
-
-        // City code API used again for arrival info.
-
-        var arrivalCode = flight.arrival.iataCode;
-        var arrivalInfo = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${arrivalCode}`;
+        
+  //Function to obtain information from list item we click on
+  var listOfFlights = document.createElement("li"); 
+  // City code API used again for arrival info.     
+  var arrivalCode = flight.arrival.iataCode;
+  var arrivalInfo = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${arrivalCode}`;
 
         fetch(arrivalInfo)
           .then(function (response) {
@@ -161,14 +133,37 @@ function searchFlights() {
             );
 
             blockSpinner();
+            
+            // List creation for flight info.
+            listOfFlights.textContent =
+            flightNumber + "\n" + departureTime + "\n" + gateTerminal + "\n" + arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry;
+  
+            flightList.appendChild(listOfFlights);
 
-            listOfFlights.textContent +=
-              "\n" +
-              arrivalCodeCity +
-              "\n" +
-              arrivalNameCity +
-              "\n" +
-              arrivalCountry;
+            listOfFlights.addEventListener("click", function () {
+              var selectedFlight = event.target;
+              var selectedFlightText = selectedFlight.textContent;
+              console.log(selectedFlightText)
+              var myobj = {
+                flightNumber: flight.flight.iataNumber,
+                depatureTime: flight.departure.scheduledTime,
+                gate: flight.departure.gate,
+                terminal: flight.departure.terminal,
+                arrCode: data[0].codeIataCity,
+                arrCityName: data[0].timezone,
+                arrCountry: data[0].nameCountry
+              } 
+              //Event Listener for Save button click
+              document.getElementById("save-flight-button").addEventListener("click", function () {
+                console.log("Saving");
+                //if condition to check if array contains the selected flight
+                if(!selectedFlightsArray.find(item => item.flightNumber === flight.flight.iataNumber)){
+                selectedFlightsArray.push(myobj)
+                console.log(selectedFlightsArray)
+                };
+              localStorage.setItem("specificFlights", JSON.stringify(selectedFlightsArray));
+              });
+            });
           });
       });
     });
