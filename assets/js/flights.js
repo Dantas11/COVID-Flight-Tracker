@@ -44,3 +44,13 @@ printSaveFlights();
 // }
 
 // document.getElementById("clear-save-flights").onclick = clearSelectFlights;
+
+
+
+// Buttons
+
+var backBtn = document.querySelector("#backButton");
+
+backBtn.addEventListener("click", function () {
+  location.href = "index.html";
+});
