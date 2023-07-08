@@ -7,9 +7,16 @@ body, html {
     background-attachment: fixed;
   }
 
-h1 {
-    text-align: center;
-}
+main h1 {
+  font-size: 30px;
+  text-align: center;
+}  
+
+/* main h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+} */
 
 .saved-flights { 
     display: flex; 
