@@ -6,7 +6,7 @@ var covidInfo = document.getElementById("covid-info");
 var spinner = document.getElementById("spinner");
 var spinner2 = document.getElementById("spinner2");
 var countryInput = document.getElementById("country-input");
-var selectedFlightsArray = JSON.parse(localStorage.getItem("specificFlights")) || [];
+var selectedFlightsArray = JSON.parse(window.localStorage.getItem("specificFlights")) || [];
 
 // Buttons
 var flightSearchButton = document.getElementById("flight-search-button");
@@ -161,8 +161,8 @@ function searchFlights() {
                 selectedFlightsArray.push(myobj)
                 console.log(selectedFlightsArray)
                 };
-              localStorage.setItem("specificFlights", JSON.stringify(selectedFlightsArray));
-              });
+              window.localStorage.setItem("specificFlights", JSON.stringify(selectedFlightsArray));
+            });
             });
           });
       });
