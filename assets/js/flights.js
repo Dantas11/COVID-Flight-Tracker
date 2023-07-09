@@ -22,7 +22,6 @@ printSaveFlights();
 
 //Local storage clear button
 document.getElementById("clear").addEventListener("click", function () {
-  console.log("Clearing");
   localStorage.clear();
   window.location.reload();
 });
