@@ -15,19 +15,43 @@ As a user, I want to be able to select a travel destination and access informati
 
 ## Acceptance Criteria
 
-GIVEN a calendar input
+GIVEN I want to search flights and check COVID info
 
-WHEN I input the date and city and click on search
+WHEN I input the city
 
-THEN I am presented with a list of flights I can select AND the destination’s covid restrictions
+THEN I am presented with a dropdown of all cities with International Airports
+
+WHEN I select a city
+
+THEN it is saved in the input
+
+WHEN I select a date for departure
+
+THEN I am presented with a calender modal that allows me to choose a date
+
+WHEN I choose a date of departure
+
+THEN it is saved in the input
+
+WHEN I click the search button
+
+THEN I am presented with a list of flights with flight info corresponding to my city/date input
+
+WHEN I search the country I want covid info for and press "search"
+
+THEN I am presented with statistics of the country
 
 WHEN I select a flight on the list
 
-THEN I am presented with the flight details
+THEN I can save it using the "save" button.
 
 WHEN I save the flight
 
 THEN it is added to a saved flights list.
+
+WHEN I press the clear button in available flights
+
+THEN my search will be reset
 
 WHEN I press the clear button in save flights
 
@@ -57,4 +81,14 @@ in the process of completing our project
 
 Public
 
+## SCREENSHOTS
+
 ## Test and Deploy
+
+Github Deployment url: _deployed url_
+Slideshow document: _insert here_
+Github repos:
+Meriam - _insert repo_
+Thiago Dantas - _insert repo_
+Ying Jie Puk - _insert repo_
+Nils Heymann - _insert repo_

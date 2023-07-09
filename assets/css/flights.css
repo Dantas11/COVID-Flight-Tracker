@@ -33,8 +33,21 @@ main h1 {
 }
 
 .saved-flights li {
-  line-height: 40px;
+  background-color: #fff;
+  opacity: 70%;
+  line-height: 30px;
   white-space: pre-wrap;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.saved-flights li:hover {
+  color: #fff;
+  background: #b2b5b7;
+  opacity: 70%;
+  cursor: pointer;
 }
 
 #backButton,
@@ -52,4 +65,13 @@ main h1 {
 .flights-buttons {
   display: flex;
   flex-direction: row;
+}
+
+#saved-flights-list {
+  overflow-y: auto;
+}
+
+#saved-flights-list::-webkit-scrollbar {
+  width: 0;
+  background: 0 0;
 }
