@@ -1,18 +1,31 @@
-
 //Local Storage getting the information and displaying on site
 function printSaveFlights() {
-  var selectedFlightsArray = JSON.parse(window.localStorage.getItem("specificFlights")) || [];
-  //Function that appends the list of flights 
-  selectedFlightsArray.forEach(function(flightList) {
+  var selectedFlightsArray =
+    JSON.parse(window.localStorage.getItem("specificFlights")) || [];
+  //Function that appends the list of flights
+  selectedFlightsArray.forEach(function (flightList) {
     var liSaveFlights = document.createElement("li");
-    liSaveFlights.textContent = "Flight: " + flightList.flightNumber + 
-    " Departure Time: " + flightList.depatureTime + "\n" +
-    " Gate: " + flightList.gate +
-    " Terminal: " + flightList.terminal + 
-    " Country Code: " + flightList.arrCode + "\n" +
-    " Country: " + flightList.arrCityName +
-    " City Name: " + flightList.arrCountry
-    ;
+    liSaveFlights.textContent =
+      "Flight: " +
+      flightList.flightNumber +
+      "\n" +
+      "Departure Time: " +
+      flightList.depatureTime +
+      "\n" +
+      "Gate: " +
+      flightList.gate +
+      "\n" +
+      "Terminal: " +
+      flightList.terminal +
+      "\n" +
+      "Country Code: " +
+      flightList.arrCode +
+      "\n" +
+      "Country: " +
+      flightList.arrCountry +
+      "\n" +
+      "City Name: " +
+      flightList.arrCityName;
     var olEl = document.getElementById("saved-flights-list");
     olEl.appendChild(liSaveFlights);
   });
