@@ -83,6 +83,16 @@ Public
 
 ## SCREENSHOTS
 
+![Screenshot 2023-07-06 205336](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/f081577a-1bb1-439f-beb3-58fbcda86234)
+![Screenshot 2023-07-09 115349](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/5924a06d-0d19-43a2-b061-54d73e2ba14e)
+![Screenshot 2023-07-09 115358](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/25461ca7-a923-4803-b8d1-47e2e55a65c0)
+![Screenshot 2023-07-09 115406](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/ee1c9439-c62f-43e6-b6d2-d6231af110ed)
+![Screenshot 2023-07-09 115541](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/453d6386-8cd2-4b14-87dd-59705e0cca9b)
+![Screenshot 2023-07-09 115554](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/6c2294c3-fdca-45f0-89d7-dc952f4bc49a)
+![Screenshot 2023-07-09 181319](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/de666324-db47-4423-b49f-ec08f9017497)
+
+
+
 ## Test and Deploy
 
 Github Deployment url: _deployed url_
