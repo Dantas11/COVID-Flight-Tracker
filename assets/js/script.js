@@ -42,7 +42,6 @@ searchButton.addEventListener("click", function () {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       var countryName = "Country: " + data.country;
       var countryPopulation = "Population: " + data.population;
       var countryCovidCases = "Cases: " + data.cases;
@@ -73,7 +72,6 @@ function searchFlights() {
   showSpinner();
   // City IATA API
   var city = cityInput.value;
-  console.log(city);
   var cities = `https://aviation-edge.com/v2/public/airportDatabase?key=${flightAPI}&codeIataAirport=${city}`;
   fetch(cities)
     .then(function (response) {
@@ -81,17 +79,13 @@ function searchFlights() {
     })
     .then(function (data) {
       var cityCode = `City code: ` + data[0].codeIataCity;
-      console.log(cityCode);
       var nameCity = `City name: ` + data[0].timezone;
-      console.log(nameCity);
       var country = `Country:  ` + data[0].nameCountry;
-      console.log(country);
 
       var cityCode = data[0].codeIataCity;
     });
   // Did this to reformat the value coming from calender input
   var date = dateInput.date.Date.toISOString().split("T")[0];
-  console.log(date);
 
   // Flight info API
   var flightInfo = `https://aviation-edge.com/v2/public/flightsFuture?key=${flightAPI}&type=departure&iataCode=${city}&date=${date}`;
@@ -101,7 +95,6 @@ function searchFlights() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       var flightData = data.slice(0, 10);
       flightData.forEach(function (flight) {
         var flightNumber = `Flight number: ` + flight.flight.iataNumber;
@@ -128,9 +121,6 @@ function searchFlights() {
             var arrivalCodeCity = `Arrival City code: ` + data[0].codeIataCity;
             var arrivalNameCity = `Arrival City name: ` + data[0].timezone;
             var arrivalCountry = `Country:  ` + data[0].nameCountry;
-            console.log(
-              arrivalCodeCity + "\n" + arrivalNameCity + "\n" + arrivalCountry
-            );
 
             blockSpinner();
             
@@ -142,8 +132,9 @@ function searchFlights() {
 
             listOfFlights.addEventListener("click", function () {
               var selectedFlight = event.target;
+              event.target.style.background = 'gray';
+              event.target.style.color = 'white';
               var selectedFlightText = selectedFlight.textContent;
-              console.log(selectedFlightText)
               var myobj = {
                 flightNumber: flight.flight.iataNumber,
                 depatureTime: flight.departure.scheduledTime,
@@ -155,11 +146,9 @@ function searchFlights() {
               } 
               //Event Listener for Save button click
               document.getElementById("save-flight-button").addEventListener("click", function () {
-                console.log("Saving");
                 //if condition to check if array contains the selected flight
                 if(!selectedFlightsArray.find(item => item.flightNumber === flight.flight.iataNumber)){
                 selectedFlightsArray.push(myobj)
-                console.log(selectedFlightsArray)
                 };
               window.localStorage.setItem("specificFlights", JSON.stringify(selectedFlightsArray));
             });
