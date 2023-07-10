@@ -57,16 +57,6 @@ WHEN I press the clear button in save flights
 
 THEN it clears all my saved flights.
 
-## Table of Contents
-
-1️⃣ Installation
-
-2️⃣ Credit and Acknowledgement
-
-3️⃣ Licence
-
-4️⃣ Test and Deploy
-
 ## Installation
 
 Application can run in any Web browser such as Chrome or Safari
@@ -91,14 +81,28 @@ Public
 ![Screenshot 2023-07-09 115554](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/6c2294c3-fdca-45f0-89d7-dc952f4bc49a)
 ![Screenshot 2023-07-09 181319](https://github.com/Dantas11/COVID-Flight-Tracker/assets/125000756/de666324-db47-4423-b49f-ec08f9017497)
 
+## API's USED
 
+Flight API : https://aviation-edge.com/ COVID API: https://disease.sh/docs/#/
 
 ## Test and Deploy
 
-Github Deployment url: _deployed url_
-Slideshow document: _insert here_
+Github Deployment url: https://dantas11.github.io/COVID-Flight-Tracker/
+
+https://njheymann.github.io/Covid-Flight-Tracker/
+
+https://msadio8.github.io/Project-1-COVID-Flight-Tracker/
+
+https://yjpuk.github.io/COVID-FlightTracker/
+
+Slideshow document: https://docs.google.com/presentation/d/1ZmuMUNBJ-UGtnpmciAnG-9LleW7KSot3D2RSVgc-o1c/edit?pli=1#slide=id.gc6f80d1ff_0_27
+
 Github repos:
-Meriam - _insert repo_
-Thiago Dantas - _insert repo_
-Ying Jie Puk - _insert repo_
-Nils Heymann - _insert repo_
+
+Meriam - https://github.com/msadio8/Project-1-COVID-Flight-Tracker
+
+Thiago Dantas - https://github.com/Dantas11/COVID-Flight-Tracker
+
+Ying Jie Puk - https://github.com/YJPuk/COVID-FlightTracker
+
+Nils Heymann - https://github.com/njheymann/Covid-Flight-Tracker
